@@ -11,9 +11,8 @@ for filename in os.listdir("."):
         module_name = filename[:-3]
         try:
             module = __import__(module_name)
-            group_name = module_name.replace("group", "") \
-                                    .replace("_", "") \
-                                    .replace("-", "")
+            group_name = module_name.replace("group-", "") \
+                                    .replace("_", "") 
             print("group {0} says: {1}".format(group_name, module.tweet()))
         except ImportError:
             pass
