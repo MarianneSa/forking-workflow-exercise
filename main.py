@@ -13,7 +13,6 @@ for filename in os.listdir("."):
             module = __import__(module_name)
             group_name = module_name.replace("group-", "") \
                                     .replace("_", "") \
-                                    # .replace("-", "")
             print("group {0} says: {1}".format(group_name, module.tweet()))
         except ImportError:
             pass
